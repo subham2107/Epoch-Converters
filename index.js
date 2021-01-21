@@ -8,7 +8,7 @@ logic(user_response);
 function toHumanDate(epoch)
 {
 
-const epochdate= new Date(epoch/1000*1000);//1611041456000
+const epochdate= new Date(epoch);//1611041456000
 const date = epochdate.getDate();
 const month = epochdate.getMonth()+1;
 const year = epochdate.getFullYear();
@@ -34,7 +34,7 @@ function logic(user_response)
 {
 if(user_response===1)
 {
-  const epoch = readLineSync.question('Please enter the Epoch to be converted to HumanDate\n');
+  const epoch = parseInt(readLineSync.question('Please enter the Epoch to be converted to HumanDate\n'));
   console.log(toHumanDate(epoch));
 }
 
